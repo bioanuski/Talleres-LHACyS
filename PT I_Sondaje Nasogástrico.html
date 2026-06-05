@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LHACyS - PT I: Sondaje Nasogástrico</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 0 40px 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Cabecera superior azul institucional */
+.header-banner {
+  background-color: #1a82e2;
+  color: white;
+  padding: 20px 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-banner h1 {
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.container {
+  padding: 0 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  font-size: 1.3em;
+  border-bottom: 2px solid #1a82e2;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+p.instruction {
+  font-size: 1.05em;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Tablas estilizadas con bordes redondeados y sombras */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 40px;
+  background: white;
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ebeef5;
+}
+
+th {
+  background-color: #eef5fc;
+  color: #1a82e2;
+  font-weight: bold;
+}
+
+/* Forzar que las últimas filas no tengan borde inferior para respetar el redondeado */
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Anchos de columna proporcionales */
+.col-cant {
+  width: 20%;
+}
+
+.col-ubic {
+  width: 20%;
+}
+
+.col-check {
+  text-align: center;
+  width: 15%;
+}
+
+/* Control del diseño de los checkboxes */
+table td input[type="checkbox"] {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+/* Efecto visual al pasar el ratón */
+tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Efecto mágico: Fila iluminada en verde suave cuando está marcada */
+tr:has(input[type="checkbox"]:checked) {
+  background-color: #e8f8f5;
+  color: #7f8c8d;
+}
+
+tr:has(input[type="checkbox"]:checked) td {
+  border-bottom-color: #d1f2eb;
+}
+
+.section {
+  margin-bottom: 35px;
+}
+
+.observaciones-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Botón estilizado para volver al menú principal */
+.btn-volver {
+  display: inline-block;
+  background-color: #1a82e2;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(26, 130, 226, 0.2);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-volver:hover {
+  background-color: #1466b3;
+  transform: translateY(-1px);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Banner azul superior -->
+<div class="header-banner">
+  <h1>LHACyS - PT I - Administración de fármacos - Checklist</h1>
+</div>
+
+<div class="container">
+
+  <p class="instruction">Por favor, marque los ítems que ya estén listos en la sala.</p>
+
+  <div class="section">
+    <h2>Material por estudiante</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th class="col-cant">Unidades</th>
+          <th class="col-ubic">Ubicación</th>
+          <th class="col-check">Preparado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Guantes no estériles</td><td>1 par por estudiante</td><td></td><td class="col-check"><input type="checkbox"></td></tr>
+        <tr><td>Gasas</td><td>1 por estudiante</td><td></td><td class="col-check"><input type="checkbox"></td></tr>
+        <tr><td>Jeringuilla 10ml</td><td>1 por estudiante</td><td></td><td class="col-check"><input type="checkbox"></td></tr>
+        <tr><td>Suero 10ml</td><td>1 por estudiante</td><td></td><td class="col-check"><input type="checkbox"></td></tr>
+       </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Material compartido</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th class="col-cant">Unidades</th>
+          <th class="col-ubic">Ubicación</th>
+          <th class="col-check">Preparado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Maniquí SNG</td><td>2 por grupo</td><td></td><td class="col-check"><input type="checkbox"></td></tr>        
+        <tr><td>Palo de gotero</td><td>1 por grupo</td><td></td><td class="col-check"><input type="checkbox"></td></tr>
+	<tr><td>Sonda Levi (10 a 18)</td><td>2 por grupo</td><td></td><td class="col-check"><input type="checkbox"></td></tr>  
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Información del taller</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nº de grupos</th>
+          <th>Estudiantes por grupo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12 (mañana) / 8 (tarde)</td>
+          <td>7 - 8 estudiantes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Observaciones</h2>
+    <div class="observaciones-box">
+      <p style="margin:0; color:#7f8c8d;">Espacio para indicar distribución del aula, estaciones y cualquier especificación adicional.</p>
+    </div>
+  </div>
+
+  <!-- Botón azul para regresar al index.html -->
+  <a href="index.html" class="btn-volver">← Volver al Panel Principal</a>
+
+</div>
+
+</body>
+</html>
