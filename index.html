@@ -42,21 +42,25 @@
         }
 
         /* Lista de talleres con tarjetas redondeadas y sombras */
-        ul.menu-talleres {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
+ul.menu-talleres {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
 
         ul.menu-talleres li {
-            margin-bottom: 20px;
-            background: #ffffff;
-            padding: 20px 25px;
-            border: 1px solid #dcdfe6;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+    margin-bottom: 0;
+    background: #ffffff;
+    padding: 20px 25px;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
         /* Efecto sutil al pasar el ratón sobre la tarjeta del taller */
         ul.menu-talleres li:hover {
@@ -87,6 +91,12 @@
             font-size: 0.95em;
             line-height: 1.5;
         }
+
+@media (max-width: 768px) {
+    ul.menu-talleres {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -102,22 +112,25 @@
         <!-- Menú de enlaces en formato tarjetas estilizadas -->
         <ul class="menu-talleres">
             <li>
-                <a href="PT I_Extracciones.html">PT I: Extracciones</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-            <li>
                 <a href="PT I_Administración de fármacos.html">PT I: Administración de fármacos</a>
                 <p>Descripción breve o introducción de lo que se trata este taller.</p>
             </li>
+	    <li>
+                <a href="PT I_Aseo, movilización y vendajes.html">PT I: Aseo, movilización y vendajes</a>
+                <p>Descripción breve o introducción de lo que se trata este taller.</p>
+            </li>
             <li>
-                <a href="PT I_Sondaje vesical.html">PT I: Sondaje vesical</a>
+                <a href="PT I_Extracciones.html">PT I: Extracciones</a>
                 <p>Descripción breve o introducción de lo que se trata este taller.</p>
             </li>
 	    <li>
                 <a href="PT I_Sondaje Nasogástrico.html">PT I: Sondaje Nasogástrico</a>
                 <p>Descripción breve o introducción de lo que se trata este taller.</p>
             </li>
-
+            <li>
+                <a href="PT I_Sondaje vesical.html">PT I: Sondaje vesical</a>
+                <p>Descripción breve o introducción de lo que se trata este taller.</p>
+            </li>
         </ul>
     </div>
 
