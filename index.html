@@ -1,154 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Talleres - LHACyS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0 0 40px 0;
-            background-color: #f5f7fa;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú de Talleres - LHACyS</title>
+<style>
+:root{--azul:#1a82e2;--azul-oscuro:#1267b5;--verde:#2d7422;--tinta:#21415e;--texto:#536b80;--fondo:#f3f7fa;--linea:#dbe6ee}
+*{box-sizing:border-box} body{font-family:Arial,sans-serif;margin:0;padding:0 0 48px;background:var(--fondo);color:var(--tinta)}
+.header-banner{background:linear-gradient(135deg,var(--azul),var(--azul-oscuro));padding:24px 40px 28px;text-align:center;box-shadow:0 3px 10px #0002}
+.header-logo-box{width:min(1040px,96%);margin:0 auto 20px;padding:12px 20px;background:#fff;border-radius:12px;box-shadow:0 5px 16px #0003}
+.header-logo{display:block;width:100%;max-width:970px;height:auto;margin:auto} .header-banner h1{margin:0 auto;color:#fff;max-width:1200px;font-size:clamp(1.25rem,2.05vw,1.85rem);line-height:1.25;white-space:nowrap}
+.container{padding:0 40px;max-width:1240px;margin:32px auto 0} .intro{font-size:1.04rem;color:var(--texto);line-height:1.65;margin:0 0 26px}
+.menu-talleres{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.menu-talleres li{background:#fff;padding:20px 23px;border:1px solid var(--linea);border-left:5px solid var(--verde);border-radius:12px;box-shadow:0 5px 15px #163d5a10;transition:.2s}
+.menu-talleres li:hover{transform:translateY(-2px);box-shadow:0 9px 22px #163d5a1b} .menu-talleres a{color:var(--azul-oscuro);font-weight:700;font-size:1.18rem;text-decoration:none;cursor:pointer} .menu-talleres a:hover{color:var(--verde)} .menu-talleres p{color:var(--texto);margin:7px 0 0;line-height:1.5;font-size:.93rem}
+.menu-individual{margin-top:32px;}
+.group{margin-top:32px;background:#fff;border:1px solid var(--linea);border-radius:16px;box-shadow:0 8px 24px #163d5a14;overflow:hidden}
+.group-head{position:relative;display:flex;align-items:center;gap:13px;padding:18px 22px;background:linear-gradient(135deg,#176fb9,#1492bd);border-left:7px solid var(--verde);color:#fff}
+.group-icon{min-width:80px;height:36px;padding:0 12x;display:flex;align-items:center;justify-content:center;border-radius:8px;background:#ffffff22;border:1px solid #ffffff40;font-size:1rem;font-weight:800;white-space:nowrap}
+.group-head h2{font-size:1.25rem;margin:0;color:#fff} .group-head p{margin:4px 0 0;color:#e8f5ff;font-size:.91rem}
+.group-body{padding:20px} .subgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.subcard{display:flex;flex-direction:column;min-height:110px;padding:15px;border:1px solid #d7e5ed;border-radius:11px;background:linear-gradient(180deg,#fff,#f7fbfd);text-decoration:none;transition:.2s;cursor:pointer}
+.subcard:hover{transform:translateY(-2px);border-color:#7ebddc;box-shadow:0 7px 16px #176fb918;background:#f3fbff} .subcard strong{color:var(--azul-oscuro);font-size:1.02rem;margin-bottom:7px} .subcard:hover strong{color:var(--verde)} .subcard span{color:var(--texto);font-size:.9rem;line-height:1.4}
+@media(max-width:1050px){.portal-options{grid-template-columns:repeat(2,minmax(0,1fr))}.portal-card:last-child{grid-column:1/-1}}
+@media(max-width:850px){.subgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.header-banner{padding:18px 14px 22px}.header-logo-box{width:100%;padding:9px 12px;margin-bottom:16px}.header-banner h1{font-size:1.22rem;white-space:normal}.container{padding:0 16px}.portal-options,.menu-talleres,.subgrid{grid-template-columns:1fr}.portal-card:last-child{grid-column:auto}.group-head{align-items:flex-start}}
 
-        /* Cabecera superior azul institucional idéntica a los talleres */
-        .header-banner {
-            background-color: #1a82e2;
-            color: white;
-            padding: 20px 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+.portal-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px}
+.portal-card{display:flex;flex-direction:column;min-height:245px;padding:30px 28px;background:#fff;border:1px solid var(--linea);border-left:7px solid var(--verde);border-radius:16px;box-shadow:0 8px 24px #163d5a14;transition:.2s}
+.portal-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #163d5a22}
+.portal-title{display:flex;align-items:flex-start;gap:14px;margin:0 0 14px}
+.portal-icon{flex:0 0 auto;font-size:2.15rem;line-height:1.08}
+.portal-card h2{margin:0;color:var(--azul-oscuro);font-size:1.35rem;line-height:1.3}
+.portal-card>p{flex:1;margin:0 0 24px;color:var(--texto);font-size:.96rem;line-height:1.6}
+.portal-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:0;border-radius:9px;background:var(--verde);color:#fff;font:700 1rem Arial,sans-serif;text-decoration:none;cursor:pointer;transition:.2s}
+.portal-button:hover,.portal-button:focus{background:#245f1b;box-shadow:0 5px 13px #2d742233;outline:none}
+.back-button{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:10px 15px;border:1px solid #bad3e5;border-radius:9px;background:#fff;color:var(--azul-oscuro);font-weight:700;cursor:pointer}
+.back-button:hover{color:var(--verde);border-color:#8db9d6}
+[hidden]{display:none!important}
 
-        .header-banner h1 {
-            margin: 0;
-            font-size: 1.6em;
-            font-weight: bold;
-        }
-
-        .container {
-            padding: 0 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .intro {
-            font-size: 1.05em;
-            color: #555;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Lista de talleres con tarjetas redondeadas y sombras */
-ul.menu-talleres {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-        ul.menu-talleres li {
-    margin-bottom: 0;
-    background: #ffffff;
-    padding: 20px 25px;
-    border: 1px solid #dcdfe6;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-        /* Efecto sutil al pasar el ratón sobre la tarjeta del taller */
-        ul.menu-talleres li:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-            background-color: #fcfdfe;
-        }
-
-        /* Estilo para los hipervínculos de los talleres */
-        ul.menu-talleres a {
-            color: #1a82e2;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.25em;
-            display: inline-block;
-            margin-bottom: 5px;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
-        }
-
-        ul.menu-talleres a:hover {
-            border-color: #1a82e2;
-        }
-
-        ul.menu-talleres p {
-            margin: 5px 0 0 0;
-            color: #606266;
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-@media (max-width: 768px) {
-    ul.menu-talleres {
-        grid-template-columns: 1fr;
-    }
-}
-    </style>
+</style>
 </head>
 <body>
+<header class="header-banner"><div class="header-logo-box"><img class="header-logo" src="logo_LHACyS_corto.jpg" alt="Universidad Autónoma de Madrid y Laboratorio de Habilidades Clínicas y Simulación"></div><h1 id="pageTitle">Sistema de Formularios LHACyS</h1></header>
 
-    <!-- Banner azul superior -->
-    <div class="header-banner">
-        <h1>Talleres LHACyS</h1>
-    </div>
+<main id="portal" class="container">
+<p class="intro">Selecciona el tipo de formulario que deseas utilizar para acceder al sistema correspondiente.</p>
+<section class="portal-options" aria-label="Tipos de formulario">
+<article class="portal-card">
+<div class="portal-title"><span class="portal-icon" aria-hidden="true">🏢</span><h2>Formularios de Solicitud de Espacios LHACyS</h2></div>
+<p>Accede a los formularios de solicitud de espacios del Laboratorio de Habilidades Clínicas y Simulación.</p>
+<a class="portal-button" href="ESPACIOS.html">Acceder a Espacios</a>
+</article>
+<article class="portal-card">
+<div class="portal-title"><span class="portal-icon" aria-hidden="true">📦</span><h2>Formularios de Solicitud de Material de los Talleres LHACyS</h2></div>
+<p>Solicita el material fungible e inventariable necesario para los talleres, seminarios y actividades docentes del LHACyS.</p>
+<button class="portal-button" type="button" onclick="mostrarMateriales()">Acceder a Materiales</button>
+</article>
+<article class="portal-card">
+<div class="portal-title"><span class="portal-icon" aria-hidden="true">🤝</span><h2>Formulario de Préstamo de Material</h2></div>
+<p>Solicita el préstamo de material del Laboratorio de Habilidades Clínicas y Simulación para la realización de una actividad.</p>
+<a class="portal-button" href="PRESTAMO.html">Acceder a Préstamo</a>
+</article>
+</section>
+</main>
+<main id="materiales" class="container" hidden>
+<button class="back-button" type="button" onclick="volverAlPortal()">← Volver al menú principal</button>
+<p class="intro">Sistema de solicitud de material fungible e inventariable de los talleres del LHACyS. Selecciona un taller o bloque temático y cumplimenta el formulario con los materiales necesarios.</p>
+<ul class="menu-talleres">
+<li><a onclick="abrirTaller('ABSU.html')">ABSU</a><p>Accede al formulario de solicitud de material del taller.</p></li>
+<li><a onclick="abrirTaller('ACP.html')">Auscultación Cardiopulmonar</a><p>Accede al formulario de solicitud de material del taller.</p></li>
+</ul>
 
-    <div class="container">
-        <p class="intro">Sistema de gestión y consulta de material fungible e inventariable de los talleres del LHACyS. Selecciona uno de los siguientes talleres para ver su información detallada y los materiales necesarios:</p>
+<section class="group"><div class="group-head"><div class="group-icon">IPC</div><div><h2>Introducción a la Práctica Clínica</h2><p>Selecciona el seminario correspondiente.</p></div></div><div class="group-body"><div class="subgrid">
+<a class="subcard" onclick="abrirTaller('IPC_Seminario 3.html')"><strong>Seminario 3</strong><span>Vía venosa, sondaje vesical y exploración clínica.</span></a>
+<a class="subcard" onclick="abrirTaller('IPC_Seminario 4.html')"><strong>Seminario 4</strong><span>Abdomen, tacto rectal y aparato locomotor.</span></a>
+<a class="subcard" onclick="abrirTaller('IPC_Seminario 5.html')"><strong>Seminario 5</strong><span>Comportamiento, pares craneales, motor, sensibilidad y reflejos.</span></a>
+</div></div></section>
 
-        <!-- Menú de enlaces en formato tarjetas estilizadas -->
-        <ul class="menu-talleres">
-	    <li>
-                <a href="ABSU.html">ABSU</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-	    <li>
-                <a href="IPQ_Anestesia.html">IPQ: Anestesia</a>
-                <p>En este taller se desarrollan 4 estaciones: RCP, DESA, Punción epidural y canalización vía venosa.</p>
-            </li>
-	    <li>
-                <a href="IPQ_Suturas.html">IPQ: Suturas</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-	    <li>
-                <a href="Obstetricia y Ginecología.html">Obstetricia y Ginecología</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-            <li>
-                <a href="PT I_Administración de fármacos.html">PT I: Administración de fármacos</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-	    <li>
-                <a href="PT I_Aseo, movilización y vendajes.html">PT I: Aseo, movilización y vendajes</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-            <li>
-                <a href="PT I_Extracciones.html">PT I: Extracciones</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-	    <li>
-                <a href="PT I_Sondaje Nasogástrico.html">PT I: Sondaje Nasogástrico</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-            <li>
-                <a href="PT I_Sondaje vesical.html">PT I: Sondaje vesical</a>
-                <p>Descripción breve o introducción de lo que se trata este taller.</p>
-            </li>
-        </ul>
-    </div>
+<section class="group"><div class="group-head"><div class="group-icon">IPQ</div><div><h2>Introducción a la Práctica Quirúrgica</h2><p>Selecciona el taller correspondiente.</p></div></div><div class="group-body"><div class="subgrid">
+<a class="subcard" onclick="abrirTaller('IPQ_Anestesia.html')"><strong>Anestesia</strong><span>RCP, DESA, punción epidural y canalización de vía venosa.</span></a>
+<a class="subcard" onclick="abrirTaller('IPQ_Suturas.html')"><strong>Suturas</strong><span>Accede al formulario de solicitud de material.</span></a>
+</div></div></section>
 
-</body>
-</html>
+<div class="menu-individual">
+<ul class="menu-talleres">
+<li><a onclick="abrirTaller('Obstetricia y Ginecología.html')">Obstetricia y Ginecología</a><p>Accede al formulario de solicitud de material del taller.</p></li>
+</ul>
+</div>
+
+<section class="group"><div class="group-head"><div class="group-icon">PT I</div><div><h2>Prácticas Tuteladas I</h2><p>Selecciona el taller correspondiente.</p></div></div><div class="group-body"><div class="subgrid">
+<a class="subcard" onclick="abrirTaller('PT I_Administración de fármacos.html')"><strong>Administración de fármacos</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+<a class="subcard" onclick="abrirTaller('PT I_Aseo, movilización y vendajes.html')"><strong>Aseo, movilización y vendajes</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+<a class="subcard" onclick="abrirTaller('PT I_Curas.html')"><strong>Curas</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+<a class="subcard" onclick="abrirTaller('PT I_Extracciones.html')"><strong>Extracciones</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+<a class="subcard" onclick="abrirTaller('PT I_Sondaje Nasogástrico.html')"><strong>Sondaje nasogástrico</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+<a class="subcard" onclick="abrirTaller('PT I_Sondaje vesical.html')"><strong>Sondaje vesical</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+</div></div></section>
+
+<section class="group"><div class="group-head"><div class="group-icon">PT III</div><div><h2>Prácticas Tuteladas III</h2><p>Selecciona el taller correspondiente.</p></div></div><div class="group-body"><div class="subgrid">
+<a class="subcard" onclick="abrirTaller('PT III_Comunicación.html')"><strong>Comunicación</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+<a class="subcard" onclick="abrirTaller('PT III_Suturas.html')"><strong>Suturas</strong><span>Accede al formulario de solicitud de material del taller.</span></a>
+</div></div></section>
+
+<section class="group"><div class="group-head"><div class="group-icon">PT V</div><div><h2>Prácticas Tuteladas V</h2><p>Selecciona el taller correspondiente.</p></div></div><div class="group-body"><div class="subgrid">
+<a class="subcard" onclick="abrirTaller('PT V_RCP Pediátrica.html')"><strong>RCP Pediátrica</strong><span>RCP y vía aérea.</span></a>
+<a class="subcard" onclick="abrirTaller('PT V_RCP Pediátrica Avanzada.html')"><strong>RCP Pediátrica Avanzada</strong><span>RCP, vía aérea y administración de fármacos.</span></a>
+<a class="subcard" onclick="abrirTaller('PT V_RCP Adulto.html')"><strong>RCP Adulto</strong><span>RCP, vía aérea y DESA.</span></a>
+<a class="subcard" onclick="abrirTaller('PT V_Venopunción Pediátrica.html')"><strong>Venopunción Pediátrica</strong><span>Accede al formulario de solicitud de material.</span></a>
+</div></div></section>
+
+<div class="menu-individual">
+<ul class="menu-talleres">
+<li><a onclick="abrirTaller('Simulación y Modelado Clínico.html')">Simulación y Modelado Clínico</a><p>Accede al formulario de solicitud de material del taller.</p></li></ul>
+</div>
+
+</main>
+<script>
+function abrirTaller(urlArchivo){window.open(urlArchivo,'_blank');}
+function mostrarMateriales(){document.getElementById('portal').hidden=true;document.getElementById('materiales').hidden=false;document.getElementById('pageTitle').textContent='Formularios de Solicitud de Material de los Talleres LHACyS';window.scrollTo({top:0,behavior:'smooth'});}
+function volverAlPortal(){document.getElementById('materiales').hidden=true;document.getElementById('portal').hidden=false;document.getElementById('pageTitle').textContent='Sistema de Formularios LHACyS';window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body></html>
